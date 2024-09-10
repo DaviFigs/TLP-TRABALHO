@@ -4,6 +4,12 @@
  */
 package trabalho.tlp;
 
+import banco.PacienteBanco;
+import banco.MedicoBanco;
+import banco.ReservaBanco;
+import banco.CirurgiaBanco;
+import banco.CcBanco;
+
 /**
  *
  * @author davi
@@ -14,7 +20,7 @@ public class Main {
         int opcao = 0;
         System.out.println("------SEJA BEM-VINDO USUÁRIO------");
         System.out.println("------FEITO POR:\n-Davi Figueiredo\n-Gutemberg Souza\n-João Chaparro");
-        System.out.println("vsf");
+        
         
         
         //cadastro automático de centros cirurgicos, médicos e pacientes
@@ -26,7 +32,29 @@ public class Main {
             System.out.println("2- Listar Cirurgias");
             System.out.println("3- Alterar médico da cirurgia");
             
-
+            switch(opcao)
+            {
+                case 0:
+                    System.out.println("Até mais professora Lia");
+                    break;
+                case 1:
+                    break;
+                    
+                case 2:
+                    break;
+                    
+                case 3:
+                    break;
+                    
+                case 4:
+                    break;
+                    
+                    
+                default:
+                    System.out.println("Opção não existe!");
+                    break;
+                                
+            }
         }while(opcao !=0);
         // TODO code application logic here
     }

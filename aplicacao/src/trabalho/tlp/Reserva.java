@@ -9,5 +9,7 @@ package trabalho.tlp;
  * @author davi
  */
 public class Reserva {
-    
+    private int id;
+    private String data_hora;
+    private Cc cc;
 }

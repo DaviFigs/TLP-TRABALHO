@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import trabalho.tlp.Paciente;
 
 /**
  *
@@ -16,6 +17,29 @@ import java.util.ArrayList;
 public class PacienteBanco 
 {
     
+    public void adicionar(Paciente paciente)
+    {   
+        try
+        {
+            Connection conexao = ConectaBanco.getConnection();
+            String sql = "insert into paciente values (default, ?, ?, ?)";
+            PreparedStatement statement = conexao.prepareStatement(sql);
+            statement.setString(1, paciente.getNome());
+            statement.setInt(2, paciente.getCod_sus());
+            statement.setString(3, paciente.getCpf());
+            ResultSet rs = statement.executeQuery();
+            
+            System.out.println("Paciente adicionado com sucesso");
+            statement.close();
+            conexao.close();
+
+
+        }
+        catch(Exception e)
+        {
+        e.printStackTrace();
+        }
+    }
     //função 1
         
     public ArrayList<Pessoa> buscar_por_rg(Pessoa pessoa)

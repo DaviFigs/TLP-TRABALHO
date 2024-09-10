@@ -7,7 +7,7 @@ CREATE TABLE Medico (
 	
 CREATE TABLE Paciente (
 	id SERIAL PRIMARY KEY NOT NULL,
-	nome_paciente varchar(50) NOT NULL,
+	nome varchar(50) NOT NULL,
 	cod_sus int NOT NULL,
 	cpf varchar(11) NOT NULL
 );

@@ -9,11 +9,24 @@ package trabalho.tlp;
  * @author davi
  */
 public class Main {
-khsdbfhasdfbhsd
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
+        int opcao = 0;
+        System.out.println("------SEJA BEM-VINDO USUÁRIO------");
+        System.out.println("------FEITO POR:\n-Davi Figueiredo\n-Gutemberg Souza\n-João Chaparro");
+        
+        
+        //cadastro automático de centros cirurgicos, médicos e pacientes
+        do
+        {
+            System.out.println("------OPÇÕES------");
+            System.out.println("0- Sair!");
+            System.out.println("1- Cadastrar uma cirurgia");
+            System.out.println("2- Listar Cirurgias");
+            System.out.println("3- Alterar médico da cirurgia");
+            
+
+        }while(opcao !=0);
         // TODO code application logic here
     }
     

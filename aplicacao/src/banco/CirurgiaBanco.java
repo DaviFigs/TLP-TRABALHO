@@ -7,28 +7,27 @@ package banco;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import trabalho.tlp.Cc;
-import trabalho.tlp.Medico;
-import trabalho.tlp.Paciente;
-import trabalho.tlp.Reserva;
+import trabalho.tlp.Cirurgia;
 
 /**
  *
  * @author davi
  */
 public class CirurgiaBanco {
-    public void adicionar(Medico medico, Paciente paciente,Reserva reserva)
+    
+    public void adicionar(Cirurgia cirurgia)
     {   
         try
         {
             Connection conexao = ConectaBanco.getConnection();
-            String sql = "insert into cirurgia values (default, ?, ?, ?, ?)";
+            String sql = "insert into cirurgia values(default, ?, ?, ?)";
             PreparedStatement statement = conexao.prepareStatement(sql);
             
-            statement.setInt(1, medico.getId());
-            statement.setInt(2, paciente.getId());
-            statement.setInt(3, reserva.getId());
-            ResultSet rs = statement.executeQuery();
+            statement.setInt(1, cirurgia.getPaciente().getId());
+            statement.setInt(2, cirurgia.getMedico().getId());
+            statement.setInt(3, cirurgia.getReserva().getId());
+            
+            statement.executeUpdate();
             
             System.out.println("Cirurgia adicionada com sucesso");
             statement.close();

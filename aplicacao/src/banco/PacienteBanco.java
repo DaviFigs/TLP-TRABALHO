@@ -59,7 +59,8 @@ public class PacienteBanco
             {
                 id_busca = rs.getInt("id");
 
-            }            
+            }          
+            System.out.println(id_busca);
             statement.close();
             conexao.close();
 

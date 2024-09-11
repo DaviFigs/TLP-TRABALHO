@@ -62,7 +62,6 @@ public class MedicoBanco {
             statement.close();
             conexao.close();
 
-
         }
         catch(Exception e)
         {

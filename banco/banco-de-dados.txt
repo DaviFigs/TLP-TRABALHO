@@ -29,8 +29,3 @@ CREATE TABLE Cirurgia(
 	id_reserva int REFERENCES Reserva(id) NOT NULL
 );
 
-
-fhgisdgsjgsdbhgshgbjfgsffasfasfas
-asdfasfasfa
-asdfasdfasfasd
-

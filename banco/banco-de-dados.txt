@@ -28,3 +28,6 @@ CREATE TABLE Cirurgia(
 	id_medico int REFERENCES Medico(id) NOT NULL,
 	id_reserva int REFERENCES Reserva(id) NOT NULL
 );
+
+
+fhgisdgsjgsdbhgshgbjfg

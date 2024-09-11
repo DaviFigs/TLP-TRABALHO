@@ -74,6 +74,7 @@ public class Main {
                     
                     System.out.println("Digite o número/id do centro cirúrgico: ");
                     cc.setId(input.nextInt());
+                    man_cirurgia.listar_cirurgias(cc.getId());
                     
                     
                     

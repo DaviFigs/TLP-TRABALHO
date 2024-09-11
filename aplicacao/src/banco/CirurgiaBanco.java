@@ -42,7 +42,6 @@ public class CirurgiaBanco {
     }
     
     public void listar_cirurgias(int numero_cc){
-        int id_cirurgia
         
         try
         {
@@ -62,15 +61,13 @@ public class CirurgiaBanco {
 
             while(rs.next())
             {
+                System.out.println("\nId Cirurgia: "+ rs.getInt("id"));
+                System.out.println("Nome Paciente: "+ rs.getString("nome_paciente"));
+                System.out.println("Nome Médico: "+ rs.getString("nome_medico"));
+                System.out.println("Data: "+ rs.getString("data_hora"));
                 
                 pessoa_busca.setId(rs.getInt("id"));
-                pessoa_busca.setNome(rs.getString("nome_paciente"));
-                pessoa_busca.setRg(rs.getString("rg"));    
-                resultados.add(pessoa_busca);
             }
-
-            
-            System.out.println("Cirurgia adicionada com sucesso");
             statement.close();
             conexao.close();
 

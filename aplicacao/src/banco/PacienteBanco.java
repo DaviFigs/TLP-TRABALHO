@@ -40,8 +40,39 @@ public class PacienteBanco
         e.printStackTrace();
         }
     }
+    
+    public int buscar_por_nome(String nome)
+    {   
+        int id_busca = 0;
+        try
+        {
+            
+            Connection conexao = ConectaBanco.getConnection();
+            String sql = "select id from paciente where nome = ?";
+            PreparedStatement statement = conexao.prepareStatement(sql);
+            
+            statement.setString(1, nome);
+            
+            ResultSet rs = statement.executeQuery();
+            
+            while(rs.next())
+            {
+                id_busca = rs.getInt("id");
+
+            }            
+            statement.close();
+            conexao.close();
+
+
+        }
+        catch(Exception e)
+        {
+        e.printStackTrace();
+        }
+        return id_busca;
+    }
     //função 1
-        
+   /*     
     public ArrayList<Pessoa> buscar_por_rg(Pessoa pessoa)
     {   
         ArrayList<Pessoa> resultados = new ArrayList<Pessoa>();
@@ -230,5 +261,5 @@ public class PacienteBanco
         catch(Exception e)
         {
         e.printStackTrace();
-        }
+        }*/
     }

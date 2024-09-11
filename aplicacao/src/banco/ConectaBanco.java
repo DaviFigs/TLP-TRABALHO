@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package banco;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,7 +11,7 @@ public class ConectaBanco {
     private static Connection con;
 
     public static Connection getConnection() {
-        url = "jdbc:postgresql://localhost:5432/teste";//modifique aqui
+        url = "jdbc:postgresql://localhost:5432/trabalho-tlp";//modifique aqui
         usuario = "postgres";//modifique aqui
         senha = "postgres";//modifique aqui
         try {

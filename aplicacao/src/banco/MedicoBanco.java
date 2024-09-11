@@ -39,4 +39,37 @@ public class MedicoBanco {
         }
     }
     
+    
+    public int buscar_por_nome(String nome)
+    {   
+        int id_busca = 0;
+        try
+        {
+            
+            Connection conexao = ConectaBanco.getConnection();
+            String sql = "select id from medico where nome = ?";
+            PreparedStatement statement = conexao.prepareStatement(sql);
+            
+            statement.setString(1, nome);
+            
+            ResultSet rs = statement.executeQuery();
+            
+            while(rs.next())
+            {
+                id_busca = rs.getInt("id");
+
+            }            
+            statement.close();
+            conexao.close();
+
+
+        }
+        catch(Exception e)
+        {
+        e.printStackTrace();
+        }
+        System.out.println(id_busca);
+        return id_busca;
+    }
+    
 }

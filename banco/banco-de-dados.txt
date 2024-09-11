@@ -30,7 +30,19 @@ CREATE TABLE Cirurgia(
 );
 
 
-ESTOU FAZENDO UMA MUDANÇA
-MUDANÇA 2 GUTEMBERG 
-MUDANÇA DAVI
-MUDANÇA DE NOVO
+insert into medico values(default, 'destefani', 123, 'neurologista');
+insert into paciente values(default, 'gutemberg', 123, '123.123.123.12');
+insert into centrocirurgico values(default);
+insert into reserva values(default, '2024-09-10 14:30:00', 1);
+insert into cirurgia values(default, 1,1,1);
+
+insert into medico values(default, 'jane', 1234, 'obstetra');
+insert into paciente values(default, 'giovana', 1234, '124.124.124.23');
+insert into centrocirurgico values(default);
+insert into reserva values(default, '2024-09-10 11:30:00', 1);
+insert into cirurgia values(default, 2,2,2);
+
+insert into reserva values(default, '2024-09-14 16:30:00', 1);
+insert into cirurgia values(default, 2,1,3);
+
+

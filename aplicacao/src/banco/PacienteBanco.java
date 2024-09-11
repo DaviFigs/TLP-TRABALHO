@@ -27,9 +27,10 @@ public class PacienteBanco
             statement.setString(1, paciente.getNome());
             statement.setInt(2, paciente.getCod_sus());
             statement.setString(3, paciente.getCpf());
-            ResultSet rs = statement.executeQuery();
             
-            System.out.println("Paciente adicionado com sucesso");
+            statement.executeUpdate();
+            
+            System.out.println("Médico adicionado com sucesso");
             statement.close();
             conexao.close();
 
@@ -71,6 +72,35 @@ public class PacienteBanco
         e.printStackTrace();
         }
         return id_busca;
+    }
+    
+    
+    public void listar()
+    {        
+        try
+        {     
+            Connection conexao = ConectaBanco.getConnection();
+            String sql = "select * from paciente";
+            PreparedStatement statement = conexao.prepareStatement(sql);
+
+            ResultSet rs = statement.executeQuery();
+            
+            while(rs.next())
+            {
+                System.out.println("------Pacientes------");
+                System.out.println("Id: "+ rs.getInt("id"));
+                System.out.println("Nome: "+ rs.getString("nome"));
+                System.out.println("Código SUS: "+ rs.getInt("cod_sus"));
+                System.out.println("CPF: "+ rs.getString("cpf"));
+            }            
+            statement.close();
+            conexao.close();
+
+        }
+        catch(Exception e)
+        {
+        e.printStackTrace();
+        }
     }
     //função 1
    /*     

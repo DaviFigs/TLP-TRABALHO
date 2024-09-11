@@ -40,15 +40,16 @@ public class Main {
             Reserva reserva = new Reserva();             
             Cirurgia cirurgia = new Cirurgia();
             
-            System.out.println("\n\n---------OPÇÕES---------");
+            System.out.println("\n\n-----------OPÇÕES-----------");
             System.out.println("0- Sair!");
             System.out.println("1- Cadastrar uma cirurgia");
             System.out.println("2- Listar Cirurgias");
             System.out.println("3- Alterar médico da cirurgia\n: ");
             System.out.println("----------NÃO OBRIGATÓRIOS---------");
             System.out.println("4- Adicionar médico");
-            System.out.println("6- Adicionar paciente");
-            System.out.println("7- Adicionar reserva");
+            System.out.println("5- Adicionar paciente");
+            System.out.println("6- Listar Pacientes");
+            System.out.println("7- Listar Médicos");
             
             opcao = input.nextInt();
             
@@ -91,7 +92,7 @@ public class Main {
                     //alterar médico da cirurgia
                     break;
                     
-                //não obrigatórios
+                //não obrigatórios pro bosta do gutemberg fazer
                 case 4:
                     
                     System.out.println("Nome do médico: ");
@@ -102,17 +103,25 @@ public class Main {
                     medico.setEspecialidade(input.next());
                     
                     man_medico.adicionar(medico);
-                    
-                    
-                    //alterar médico da cirurgia
                     break;
                 case 5:
-                    //alterar médico da cirurgia
-                    break;
-                case 6:
-                    //alterar médico da cirurgia
+                    
+                    System.out.println("Nome do paciente: ");
+                    paciente.setNome(input.next());
+                    System.out.println("Código do SUS: ");
+                    paciente.setCod_sus(input.nextInt());
+                    System.out.println("CPF: ");
+                    paciente.setCpf(input.next());
+                    
+                    man_paciente.adicionar(paciente);
                     break;
                     
+                case 6:
+                    man_paciente.listar();
+                    break;            
+                case 7:
+                    man_medico.listar();  
+                    break;
                     
                 default:
                     System.out.println("Opção não existe!");

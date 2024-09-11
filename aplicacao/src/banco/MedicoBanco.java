@@ -20,7 +20,7 @@ public class MedicoBanco {
         try
         {
             Connection conexao = ConectaBanco.getConnection();
-            String sql = "insert into paciente values (default, ?, ?, ?)";
+            String sql = "insert into medico values (default, ?, ?, ?)";
             PreparedStatement statement = conexao.prepareStatement(sql);
             statement.setString(1, medico.getNome());
             statement.setInt(2, medico.getNum_crm());
@@ -71,4 +71,33 @@ public class MedicoBanco {
         return id_busca;
     }
     
+    public void listar()
+    {        
+        try
+        {     
+            Connection conexao = ConectaBanco.getConnection();
+            String sql = "select * from medico";
+            PreparedStatement statement = conexao.prepareStatement(sql);
+
+            ResultSet rs = statement.executeQuery();
+            
+            while(rs.next())
+            {
+                System.out.println("------Médicos------");
+                System.out.println("Id: "+ rs.getInt("id"));
+                System.out.println("Nome: "+ rs.getString("nome"));
+                System.out.println("Crm: "+ rs.getInt("crm"));
+                System.out.println("Especialidade: "+ rs.getString("especialidade"));
+            }            
+            statement.close();
+            conexao.close();
+
+        }
+        catch(Exception e)
+        {
+        e.printStackTrace();
+        }
+    }
+    
 }
+

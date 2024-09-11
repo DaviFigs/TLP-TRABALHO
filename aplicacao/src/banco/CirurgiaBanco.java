@@ -41,5 +41,49 @@ public class CirurgiaBanco {
         }
     }
     
+    public void listar_cirurgias(int numero_cc){
+        int id_cirurgia
+        
+        try
+        {
+            Connection conexao = ConectaBanco.getConnection();
+            String sql = "select cirurgia.id, paciente.nome nome_paciente, medico.nome nome_medico, reserva.data_hora from centro_cirurgico \n" +
+                "inner join reserva on reserva.id_centrocirurgico = centro_cirurgico.id \n" +
+                "inner join cirurgia on cirurgia.id_reserva = reserva.id \n" +
+                "inner join medico on medico.id = cirurgia.id_medico \n" +
+                "inner join paciente on paciente.id = cirurgia.id_paciente \n" +
+                "where centro_cirurgico.id = ?;";
+            
+            PreparedStatement statement = conexao.prepareStatement(sql);
+            
+            statement.setInt(1,numero_cc);
+            
+            ResultSet rs = statement.executeQuery();
+
+            while(rs.next())
+            {
+                
+                pessoa_busca.setId(rs.getInt("id"));
+                pessoa_busca.setNome(rs.getString("nome_paciente"));
+                pessoa_busca.setRg(rs.getString("rg"));    
+                resultados.add(pessoa_busca);
+            }
+
+            
+            System.out.println("Cirurgia adicionada com sucesso");
+            statement.close();
+            conexao.close();
+
+
+        }
+        catch(Exception e)
+        {
+        e.printStackTrace();
+        }
+        
+        
+        
+    }
+    
     
 }

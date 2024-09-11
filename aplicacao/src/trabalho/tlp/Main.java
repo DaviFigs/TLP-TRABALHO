@@ -69,6 +69,14 @@ public class Main {
                     break;
                     
                 case 2:
+                    Cc cc = new Cc();
+                    System.out.println("\n------OPÇÃO 2------");
+                    
+                    System.out.println("Digite o número/id do centro cirúrgico: ");
+                    cc.setId(input.nextInt());
+                    
+                    
+                    
                     break;
                     
                 case 3:

@@ -32,3 +32,6 @@ CREATE TABLE Cirurgia(
 
 asdnfiashfyasgfgasufausgfasufg
 apsdhfgi9asgfuasvfuagysvf
+asdjhfvashjkldfassdfasdf
+asdfasfsdfasdfasdfasdfasfasfas
+

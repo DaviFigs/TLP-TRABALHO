@@ -29,3 +29,6 @@ CREATE TABLE Cirurgia(
 	id_reserva int REFERENCES Reserva(id) NOT NULL
 );
 
+
+ESTOU FAZENDO UMA MUDANÇA
+MUDANÇA 2 GUTEMBERG 

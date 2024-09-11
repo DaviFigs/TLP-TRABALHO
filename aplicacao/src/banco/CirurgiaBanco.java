@@ -66,7 +66,6 @@ public class CirurgiaBanco {
                 System.out.println("Nome Médico: "+ rs.getString("nome_medico"));
                 System.out.println("Data: "+ rs.getString("data_hora"));
                 
-                pessoa_busca.setId(rs.getInt("id"));
             }
             statement.close();
             conexao.close();

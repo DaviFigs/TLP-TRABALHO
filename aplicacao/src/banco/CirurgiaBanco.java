@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package banco;
 
 import java.sql.Connection;
@@ -32,8 +28,7 @@ public class CirurgiaBanco {
             System.out.println("Cirurgia adicionada com sucesso");
             statement.close();
             conexao.close();
-
-
+            
         }
         catch(Exception e)
         {
@@ -69,8 +64,6 @@ public class CirurgiaBanco {
             }
             statement.close();
             conexao.close();
-
-
         }
         catch(Exception e)
         {

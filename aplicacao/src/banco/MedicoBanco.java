@@ -25,7 +25,8 @@ public class MedicoBanco {
             statement.setString(1, medico.getNome());
             statement.setInt(2, medico.getNum_crm());
             statement.setString(3, medico.getEspecialidade());
-            ResultSet rs = statement.executeQuery();
+            
+            statement.executeUpdate();
             
             System.out.println("Médico adicionado com sucesso");
             statement.close();
@@ -44,8 +45,7 @@ public class MedicoBanco {
     {   
         int id_busca = 0;
         try
-        {
-            
+        {     
             Connection conexao = ConectaBanco.getConnection();
             String sql = "select id from medico where nome = ?";
             PreparedStatement statement = conexao.prepareStatement(sql);

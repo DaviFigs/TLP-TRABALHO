@@ -81,12 +81,14 @@ public class MedicoBanco {
 
             ResultSet rs = statement.executeQuery();
             
+            System.out.println("------Médicos------");
             while(rs.next())
-            {
-                System.out.println("------Médicos------");
-                System.out.println("Id: "+ rs.getInt("id"));
+            {     
+                //poderíamos usar um arraylist de médico e retornar, porém como não vamos utilizar para nada, apenas para mostrar
+                //vou apenas printar
+                System.out.println("\nId: "+ rs.getInt("id"));
                 System.out.println("Nome: "+ rs.getString("nome"));
-                System.out.println("Crm: "+ rs.getInt("crm"));
+                System.out.println("Crm: "+ rs.getInt("num_crm"));
                 System.out.println("Especialidade: "+ rs.getString("especialidade"));
             }            
             statement.close();

@@ -59,9 +59,7 @@ public class Main {
                     System.out.println("Até mais professora Lia");
                     break;
                     
-                case 1:                
-                   
-                    
+                case 1:                  
                     System.out.println("\n---------OPCÃO 1---------");
                     
                     System.out.println("Qual o nome do médico que fará a cirurgia ?: ");                 
@@ -89,12 +87,13 @@ public class Main {
                     break;
                     
                 case 3:
+                    System.out.println("\n---------OPCÃO 3---------");
                     //alterar médico da cirurgia
                     break;
                     
                 //não obrigatórios pro bosta do gutemberg fazer
                 case 4:
-                    
+                    System.out.println("\n---------OPCÃO 4---------");
                     System.out.println("Nome do médico: ");
                     medico.setNome(input.next());
                     System.out.println("Crm do médico: ");
@@ -105,7 +104,7 @@ public class Main {
                     man_medico.adicionar(medico);
                     break;
                 case 5:
-                    
+                    System.out.println("\n---------OPCÃO 5---------");
                     System.out.println("Nome do paciente: ");
                     paciente.setNome(input.next());
                     System.out.println("Código do SUS: ");

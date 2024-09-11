@@ -84,11 +84,10 @@ public class PacienteBanco
             PreparedStatement statement = conexao.prepareStatement(sql);
 
             ResultSet rs = statement.executeQuery();
-            
+            System.out.println("------Pacientes------");
             while(rs.next())
-            {
-                System.out.println("------Pacientes------");
-                System.out.println("Id: "+ rs.getInt("id"));
+            {     
+                System.out.println("\nId: "+ rs.getInt("id"));
                 System.out.println("Nome: "+ rs.getString("nome"));
                 System.out.println("Código SUS: "+ rs.getInt("cod_sus"));
                 System.out.println("CPF: "+ rs.getString("cpf"));

@@ -1,6 +1,8 @@
-select centro_cirurgico.id, cirurgia.id,cirurgia.id_medico, cirurgia.id_paciente, reserva.data_hora from centro_cirurgico
+select cirurgia.id, paciente.nome, medico.nome, reserva.data_hora from centro_cirurgico
 inner join reserva on reserva.id_centrocirurgico = centro_cirurgico.id
 inner join cirurgia on cirurgia.id_reserva = reserva.id
+inner join medico on medico.id = cirurgia.id_medico
+inner join paciente on paciente.id = cirurgia.id_paciente
 where centro_cirurgico.id = 1;
 
 CREATE TABLE Medico (
@@ -52,3 +54,5 @@ insert into cirurgia values(default, 2,1,3);
 
 drop table medico, paciente, centrocirurgico, reserva, cirurgia;
 
+select * from paciente;
+select * from cirurgia;

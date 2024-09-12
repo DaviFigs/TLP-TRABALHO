@@ -67,9 +67,9 @@ public class CirurgiaBanco {
         }
     }
 
-    public void AlterarMedico(Cirurgia cirurgia, Medico medico) {
+    public static void AlterarMedico(Cirurgia cirurgia, Medico medico) {
         try {
-            // 1. Buscar o ID do médico pelo nome
+            // Buscar o ID do médico pelo nome
             Connection conexao = ConectaBanco.getConnection();
             String sql = "SELECT id FROM Medico WHERE nome = ?";
             PreparedStatement statement = conexao.prepareStatement(sql);
@@ -78,18 +78,16 @@ public class CirurgiaBanco {
             ResultSet rs = statement.executeQuery();
 
             if (rs.next()) {
-                int IdMedico = rs.getInt("id");
+                medico.setId(rs.getInt("id"));
 
-                // 2. Atualizar o médico na cirurgia
-                String sql = "UPDATE Cirurgia SET id_medico = ? WHERE id = ?";
-                PreparedStatement statement = conexao.prepareStatement(sql);
-                statement.setInt(1, IdMedico);
+                // Atualizar o médico na cirurgia
+                sql = "UPDATE Cirurgia SET id_medico = ? WHERE id = ?";
+                conexao.prepareStatement(sql);
+                statement.setInt(1, medico.getId());
                 statement.setInt(2, cirurgia.getId());
 
-                // Executa a atualização
+                // Executa
                 statement.executeUpdate();
-
-                // Fechamento dos recursos
                 statement.close();
             }
 

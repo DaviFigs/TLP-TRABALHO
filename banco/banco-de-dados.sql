@@ -56,3 +56,4 @@ drop table medico, paciente, centrocirurgico, reserva, cirurgia;
 
 select * from paciente;
 select * from cirurgia;
+abcde

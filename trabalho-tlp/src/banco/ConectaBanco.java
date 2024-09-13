@@ -2,10 +2,8 @@
 package banco;
 import java.sql.Connection;
 import java.sql.DriverManager;
-/**
- *
- * @author davi
- */
+
+
 public class ConectaBanco {
     private static String url, usuario, senha;
     private static Connection con;
@@ -17,7 +15,7 @@ public class ConectaBanco {
         try {
             con = DriverManager.getConnection(url, usuario, senha);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Erro: "+e);
         }
         return con;
     }   

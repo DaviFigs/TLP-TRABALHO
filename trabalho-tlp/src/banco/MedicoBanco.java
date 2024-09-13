@@ -9,10 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import trabalho.tlp.Medico;
 
-/**
- *
- * @author davi
- */
+
 public class MedicoBanco {
     
     public void adicionar(Medico medico)
@@ -36,7 +33,8 @@ public class MedicoBanco {
         }
         catch(Exception e)
         {
-        e.printStackTrace();
+            System.out.println("Problema: "+e);
+            e.printStackTrace();
         }
     }
     
@@ -65,10 +63,11 @@ public class MedicoBanco {
         }
         catch(Exception e)
         {
-        e.printStackTrace();
+            System.out.println("Erro: "+e);
         }
         return id_busca;
     }
+    
     
     public void listar()
     {        
@@ -80,7 +79,7 @@ public class MedicoBanco {
 
             ResultSet rs = statement.executeQuery();
             
-            System.out.println("------Médicos------");
+            System.out.println("____________Médicos____________");
             while(rs.next())
             {     
                 //poderíamos usar um arraylist de médico e retornar, porém como não vamos utilizar para nada, apenas para mostrar
@@ -96,7 +95,7 @@ public class MedicoBanco {
         }
         catch(Exception e)
         {
-        e.printStackTrace();
+           System.out.println("Erro: "+e);
         }
     }
     

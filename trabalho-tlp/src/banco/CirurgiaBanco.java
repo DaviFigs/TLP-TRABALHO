@@ -8,10 +8,7 @@ import java.sql.SQLException;
 import trabalho.tlp.Cirurgia;
 import trabalho.tlp.Medico;
 
-/**
- *
- * @author davi
- */
+
 public class CirurgiaBanco {
 
     public void adicionar(Cirurgia cirurgia) {
@@ -26,12 +23,12 @@ public class CirurgiaBanco {
 
             statement.executeUpdate();
 
-            System.out.println("Cirurgia adicionada com sucesso");
+            System.out.println("\nCirurgia adicionada com sucesso!");
             statement.close();
             conexao.close();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Erro: "+e);
         }
     }
 
@@ -52,7 +49,8 @@ public class CirurgiaBanco {
             statement.setInt(1, numero_cc);
 
             ResultSet rs = statement.executeQuery();
-
+            
+            System.out.println("_______________Cirurgias________________");
             while (rs.next()) {
                 System.out.println("\nId Cirurgia: " + rs.getInt("id"));
                 System.out.println("Nome Paciente: " + rs.getString("nome_paciente"));
@@ -63,7 +61,7 @@ public class CirurgiaBanco {
             statement.close();
             conexao.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Erro: "+e);
         }
     }
 
@@ -86,11 +84,12 @@ public class CirurgiaBanco {
             // Executa
             statement.executeUpdate();
             statement.close();
+            System.out.println("\nMédico Alterado!");
             System.out.println("Cirurgia :"+cirurgia.getId()+"\nID Médico passado: "+id_medico_passado+ "\t|\t" +"ID Medico atual: "+id_medico_atual);
             
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Erro: "+e);
         }
     }
     
@@ -113,7 +112,7 @@ public class CirurgiaBanco {
             
         }
     catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Erro: "+e);
         }
         System.out.println(id_medico);
         return id_medico;

@@ -9,10 +9,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import trabalho.tlp.Reserva;
 
-/**
- *
- * @author davi
- */
 public class ReservaBanco {
     public void adicionar(Reserva reserva)
     {   
@@ -35,7 +31,7 @@ public class ReservaBanco {
         }
         catch(Exception e)
         {
-        e.printStackTrace();
+            System.out.println("Erro: "+e);
         }
     }
     

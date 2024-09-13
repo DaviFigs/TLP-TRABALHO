@@ -1,10 +1,3 @@
-select cirurgia.id, paciente.nome, medico.nome, reserva.data_hora from centro_cirurgico
-inner join reserva on reserva.id_centrocirurgico = centro_cirurgico.id
-inner join cirurgia on cirurgia.id_reserva = reserva.id
-inner join medico on medico.id = cirurgia.id_medico
-inner join paciente on paciente.id = cirurgia.id_paciente
-where centro_cirurgico.id = 1;
-
 CREATE TABLE Medico (
 	id SERIAL PRIMARY KEY NOT NULL,
 	nome varchar(50) NOT NULL,
@@ -37,23 +30,31 @@ CREATE TABLE Cirurgia(
 );
 
 
-insert into medico values(default, 'destefani', 123, 'neurologista');
-insert into paciente values(default, 'gutemberg', 123, '123.123.123.12');
+insert into medico values(default, 'jane', 123, 'neurologista');
+insert into medico values(default, 'isa', 123, 'neurologista');
+insert into medico values(default, 'lopes', 123, 'neurologista');
+
+insert into paciente values(default, 'gutemberg', 111, '123.123.123.12');
+insert into paciente values(default, 'davi', 222, '123.123.123.12');
+insert into paciente values(default, 'chaparro', 333, '123.123.123.12');
+
 insert into centro_cirurgico values(default);
-insert into reserva values(default, '2024-09-10 14:30:00', 1);
+insert into centro_cirurgico values(default);
+insert into centro_cirurgico values(default);
+
+insert into reserva values(default, '2024-09-10 12:30:00', 1);
+insert into reserva values(default, '2024-09-10 08:30:00', 2);
+insert into reserva values(default, '2024-09-10 11:30:00', 3);
+
+insert into reserva values(default, '2024-09-22 17:30:00', 1);
+insert into reserva values(default, '2024-09-22 11:30:00', 2);
+insert into reserva values(default, '2024-09-22 14:30:00', 3);
+
 insert into cirurgia values(default, 1,1,1);
-
-insert into medico values(default, 'jane', 1234, 'obstetra');
-insert into paciente values(default, 'giovana', 1234, '124.124.124.23');
-insert into centro_cirurgico values(default);
-insert into reserva values(default, '2024-09-10 11:30:00', 1);
 insert into cirurgia values(default, 2,2,2);
+insert into cirurgia values(default, 3,3,3);
 
-insert into reserva values(default, '2024-09-14 16:30:00', 2);
-insert into cirurgia values(default, 2,1,3);
+insert into cirurgia values(default, 1,1,4);
+insert into cirurgia values(default, 2,2,5);
+insert into cirurgia values(default, 3,3,6);
 
-drop table medico, paciente, centrocirurgico, reserva, cirurgia;
-
-select * from paciente;
-select * from cirurgia;
-abcde

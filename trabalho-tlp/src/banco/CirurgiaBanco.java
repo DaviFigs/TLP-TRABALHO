@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import trabalho.tlp.Cirurgia;
 import trabalho.tlp.Medico;
 
-
 public class CirurgiaBanco {
 
     public void adicionar(Cirurgia cirurgia) {

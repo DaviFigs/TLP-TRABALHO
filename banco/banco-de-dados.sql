@@ -31,8 +31,8 @@ CREATE TABLE Cirurgia(
 
 
 insert into medico values(default, 'jane', 123, 'neurologista');
-insert into medico values(default, 'isa', 123, 'neurologista');
-insert into medico values(default, 'lopes', 123, 'neurologista');
+insert into medico values(default, 'isa', 123, 'obstetra');
+insert into medico values(default, 'lopes', 123, 'pediatra');
 
 insert into paciente values(default, 'gutemberg', 111, '123.123.123.12');
 insert into paciente values(default, 'davi', 222, '123.123.123.12');
@@ -57,4 +57,3 @@ insert into cirurgia values(default, 3,3,3);
 insert into cirurgia values(default, 1,1,4);
 insert into cirurgia values(default, 2,2,5);
 insert into cirurgia values(default, 3,3,6);
-

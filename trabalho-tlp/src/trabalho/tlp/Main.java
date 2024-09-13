@@ -71,6 +71,7 @@ public class Main {
                     break;
 
                 case 2:
+                    //numeros vão de 1 a 3(pelos inserts padrão)
                     Cc cc = new Cc();
                     System.out.println("\nOPÇÃO 2 ");
 
@@ -81,6 +82,7 @@ public class Main {
                     break;
 
                 case 3:
+                    //MÉDICOS: jane, isa, lopes
                     System.out.println("\nOPCÃO 3");
 
                     System.out.println("Informe o código da cirurgia: ");
@@ -93,7 +95,7 @@ public class Main {
                     break;
 
                 // não obrigatórios 
-                case 4:
+                case 4:              
                     System.out.println("\nOPCÃO 4");
                     System.out.println("Nome do médico: ");
                     medico.setNome(input.next());

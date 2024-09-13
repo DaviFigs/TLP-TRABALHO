@@ -14,6 +14,7 @@ import trabalho.tlp.Cc;
  * @author davi
  */
 public class CcBanco {
+    //também não foi, não é e nunca será usada, entretando eu não quero deixar vazio :0
     public void adicionar(Cc cc)
     {   
         try

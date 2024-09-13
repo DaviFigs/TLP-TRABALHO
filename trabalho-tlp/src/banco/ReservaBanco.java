@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import trabalho.tlp.Reserva;
 
 public class ReservaBanco {
+    //função que não serve pra efetivamente nada, mas vamos deixá-la aqui pq nao quero ver vazio
     public void adicionar(Reserva reserva)
     {   
         try
@@ -20,7 +21,7 @@ public class ReservaBanco {
             
             ResultSet rs = statement.executeQuery();
             
-            System.out.println("Médico adicionado com sucesso");
+            System.out.println("Reserva adicionado com sucesso");
             statement.close();
             conexao.close();
 

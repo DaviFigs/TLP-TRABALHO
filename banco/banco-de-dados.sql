@@ -1,15 +1,15 @@
 CREATE TABLE Medico (
 	id SERIAL PRIMARY KEY NOT NULL,
 	nome varchar(50) NOT NULL,
-	num_crm int NOT NULL,
+	num_crm int NOT NULL UNIQUE,
 	especialidade varchar(20) NOT NULL
 );
 	
 CREATE TABLE Paciente (
 	id SERIAL PRIMARY KEY NOT NULL,
 	nome varchar(50) NOT NULL,
-	cod_sus int NOT NULL,
-	cpf varchar(14) NOT NULL
+	cod_sus int NOT NULL UNIQUE ,
+	cpf varchar(14) NOT NULL UNIQUE
 );
 	
 CREATE TABLE Centro_Cirurgico (
@@ -32,7 +32,7 @@ CREATE TABLE Cirurgia(
 
 insert into medico values(default, 'jane', 123, 'neurologista');
 insert into medico values(default, 'isa', 123, 'obstetra');
-insert into medico values(default, 'lopes', 123, 'pediatra');
+insert into medico values(default, 'giovana', 123, 'pediatra');
 
 insert into paciente values(default, 'gutemberg', 111, '111.123.123.12');
 insert into paciente values(default, 'davi', 222, '123.222.123.12');

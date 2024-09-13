@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 
 
 public class ConectaBanco {
+    
     private static String url, usuario, senha;
     private static Connection con;
 
@@ -12,9 +13,10 @@ public class ConectaBanco {
         url = "jdbc:postgresql://localhost:5432/trabalho-tlp";//modifique aqui
         usuario = "postgres";//modifique aqui
         senha = "postgres";//modifique aqui
-        try {
+        try{
             con = DriverManager.getConnection(url, usuario, senha);
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             System.out.println("Erro: "+e);
         }
         return con;

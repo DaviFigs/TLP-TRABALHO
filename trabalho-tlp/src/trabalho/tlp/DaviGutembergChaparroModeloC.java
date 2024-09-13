@@ -20,7 +20,7 @@ public class DaviGutembergChaparroModeloC {
         int opcao = 0;
         System.out.println("\nDavi Figueiredo \t|\t Gutemberg Souza \t|\t João Chaparro\n");
 
-        do {
+        do{
             
             //instancias que vamos usar para acessar as funções e receber parametros (referem-se as tabelas do banco)
             Medico medico = new Medico();
@@ -43,7 +43,8 @@ public class DaviGutembergChaparroModeloC {
             opcao = input.nextInt();
 
             
-            switch (opcao) {
+            switch(opcao) 
+            {
                 
                 case 0:
                     System.out.println("Até mais professora Lia");
@@ -59,7 +60,7 @@ public class DaviGutembergChaparroModeloC {
                     paciente.setId(man_paciente.buscar_por_nome(input.next()));
 
                     System.out.println("Qual o codigo da reserva?: ");// numero do centro cirurgico está dentro da
-                                                                      // reserva
+                                                                                    // reserva
                     reserva.setId(input.nextInt());
 
                     cirurgia.setPaciente(paciente);
@@ -131,7 +132,7 @@ public class DaviGutembergChaparroModeloC {
                     break;
 
             }
-        } while (opcao != 0);
+        } while(opcao != 0);
 
     }
 

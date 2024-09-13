@@ -4,10 +4,7 @@
  */
 package trabalho.tlp;
 
-/**
- *
- * @author davi
- */
+
 public class Paciente {
     private int id;
     private String nome;

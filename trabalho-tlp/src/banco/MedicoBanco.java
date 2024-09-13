@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package banco;
 
 import java.sql.Connection;
@@ -16,25 +13,24 @@ public class MedicoBanco {
     {   
         try
         {
-            Connection conexao = ConectaBanco.getConnection();
-            String sql = "insert into medico values (default, ?, ?, ?)";
-            PreparedStatement statement = conexao.prepareStatement(sql);
-            statement.setString(1, medico.getNome());
-            statement.setInt(2, medico.getNum_crm());
-            statement.setString(3, medico.getEspecialidade());
+            Connection conexao = ConectaBanco.getConnection();//abre conexão
+            String sql = "insert into medico values (default, ?, ?, ?)";//sql que irá pro banco
+            PreparedStatement statement = conexao.prepareStatement(sql);//preparando o comando sql
+            statement.setString(1, medico.getNome());//pega o nome do médico e coloca no primeiro ?
+            statement.setInt(2, medico.getNum_crm());//pega o crm do médico e coloca no segundo ?
+            statement.setString(3, medico.getEspecialidade());//entendeste
             
-            statement.executeUpdate();
+            statement.executeUpdate();//executa o sql no banco de dados
             
             System.out.println("Médico adicionado com sucesso");
-            statement.close();
-            conexao.close();
+            statement.close();//fecha comandos
+            conexao.close();//fecha conexão
 
 
         }
-        catch(Exception e)
+        catch(Exception e)//pega a excessã́o/erro
         {
-            System.out.println("Problema: "+e);
-            e.printStackTrace();
+            System.out.println("\nErro: "+e);//printa o erro na tela, o qual foi é um objeto desta classe Exception
         }
     }
     
@@ -50,11 +46,11 @@ public class MedicoBanco {
             
             statement.setString(1, nome);
             
-            ResultSet rs = statement.executeQuery();
+            ResultSet rs = statement.executeQuery();//guarda as informações da nossa busca nesse objeto rs
             
-            while(rs.next())
+            while(rs.next())//enquanto houver buscas, percorra
             {
-                id_busca = rs.getInt("id");
+                id_busca = rs.getInt("id");//id_busca recebe o id buscado pela query
 
             }            
             statement.close();
@@ -63,7 +59,7 @@ public class MedicoBanco {
         }
         catch(Exception e)
         {
-            System.out.println("Erro: "+e);
+            System.out.println("\nErro: "+e);
         }
         return id_busca;
     }
@@ -95,7 +91,7 @@ public class MedicoBanco {
         }
         catch(Exception e)
         {
-           System.out.println("Erro: "+e);
+           System.out.println("\nErro: "+e);
         }
     }
     

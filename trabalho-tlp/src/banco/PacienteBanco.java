@@ -1,13 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package banco;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import trabalho.tlp.Paciente;
 
 public class PacienteBanco 
@@ -26,7 +22,7 @@ public class PacienteBanco
             
             statement.executeUpdate();
             
-            System.out.println("Médico adicionado com sucesso");
+            System.out.println("Paciente adicionado com sucesso");
             statement.close();
             conexao.close();
 
@@ -34,7 +30,7 @@ public class PacienteBanco
         }
         catch(Exception e)
         {
-            System.out.println("Erro: "+e);
+            System.out.println("\nErro: "+e);
         }
     }
     
@@ -65,7 +61,7 @@ public class PacienteBanco
         }
         catch(Exception e)
         {
-            System.out.println("Erro: "+e);
+            System.out.println("\nErro: "+e);
         }
         return id_busca;
     }
@@ -94,7 +90,7 @@ public class PacienteBanco
         }
         catch(Exception e)
         {
-            System.out.println("Erro: "+e);
+            System.out.println("\nErro: "+e);
         }
     }
 }

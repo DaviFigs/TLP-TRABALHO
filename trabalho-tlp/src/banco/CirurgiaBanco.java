@@ -27,7 +27,7 @@ public class CirurgiaBanco {
             conexao.close();
 
         } catch (Exception e) {
-            System.out.println("Erro: "+e);
+            System.out.println("\nErro: "+e);
         }
     }
 
@@ -60,7 +60,7 @@ public class CirurgiaBanco {
             statement.close();
             conexao.close();
         } catch (Exception e) {
-            System.out.println("Erro: "+e);
+            System.out.println("\nErro: "+e);
         }
     }
 
@@ -71,7 +71,7 @@ public class CirurgiaBanco {
           
             MedicoBanco mb = new MedicoBanco();
             int id_medico_atual = mb.buscar_por_nome(medico.getNome());
-            int id_medico_passado = cirurgia.getId();
+            int id_medico_passado = get_id_medico(cirurgia.getId());
             
 
             // Atualizar o médico na cirurgia
@@ -88,7 +88,7 @@ public class CirurgiaBanco {
             
 
         } catch (SQLException e) {
-            System.out.println("Erro: "+e);
+            System.out.println("\nErro: "+e);
         }
     }
     
@@ -99,19 +99,22 @@ public class CirurgiaBanco {
         try
         {
             Connection conexao = ConectaBanco.getConnection();
-            String sql = "select id_medico from cirugia where id = ?";
+            String sql = "select id_medico from cirurgia where id = ?";
             PreparedStatement statement = conexao.prepareStatement(sql);
 
             statement.setInt(1, id_cirurgia);
             ResultSet rs = statement.executeQuery();
-
-            id_medico = rs.getInt("id_medico");
+            
+            if(rs.next()){
+                id_medico = rs.getInt("id_medico");
+            }
+            
             statement.close();
             conexao.close();
             
         }
     catch (Exception e) {
-            System.out.println("Erro: "+e);
+            System.out.println("\nErro: "+e);
         }
         System.out.println(id_medico);
         return id_medico;

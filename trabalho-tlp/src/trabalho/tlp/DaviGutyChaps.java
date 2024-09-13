@@ -6,11 +6,8 @@ import banco.PacienteBanco;
 import banco.MedicoBanco;
 import banco.CirurgiaBanco;
 
-/**
- *
- * @author davi
- */
-public class Main {
+
+public class DaviGutyChaps {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);

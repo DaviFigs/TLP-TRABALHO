@@ -7,7 +7,7 @@ import banco.MedicoBanco;
 import banco.CirurgiaBanco;
 
 
-public class DaviGutyChaps {
+public class DaviGutembergChaparroModeloC {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -42,7 +42,9 @@ public class DaviGutyChaps {
 
             opcao = input.nextInt();
 
+            
             switch (opcao) {
+                
                 case 0:
                     System.out.println("Até mais professora Lia");
                     break;
@@ -103,6 +105,7 @@ public class DaviGutyChaps {
 
                     man_medico.adicionar(medico);
                     break;
+                    
                 case 5:
                     System.out.println("\nOPCÃO 5");
                     System.out.println("Nome do paciente: ");
@@ -118,6 +121,7 @@ public class DaviGutyChaps {
                 case 6:
                     man_paciente.listar();
                     break;
+                    
                 case 7:
                     man_medico.listar();
                     break;
